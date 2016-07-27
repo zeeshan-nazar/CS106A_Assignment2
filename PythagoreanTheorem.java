@@ -11,6 +11,14 @@ import acm.program.ConsoleProgram;
 
 public class PythagoreanTheorem extends ConsoleProgram {
 	
+	private void findingPythagoreanTheorem(int a, int b)
+	{
+		//compute the formula of theorem...
+				double c = Math.sqrt((a*a)+(b*b));
+				
+				//output of the program...
+				println("c ="+ c);
+	}
 	
 	public void run() {
 		/* You fill this in */
@@ -19,10 +27,7 @@ public class PythagoreanTheorem extends ConsoleProgram {
 		int a = readInt("a :");
 		int b = readInt("b :");
 		
-		//compute the formula of theorem...
-		double c = Math.sqrt((a*a)+(b*b));
+		findingPythagoreanTheorem(a,b);
 		
-		//output of the program...
-		println("c ="+ c);
 	}
 }

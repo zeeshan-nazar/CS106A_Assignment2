@@ -12,40 +12,118 @@ import acm.program.*;
 import java.awt.*;
 
 public class ProgramHierarchy extends GraphicsProgram {	
+	
+	private static final int width = 150;
+	private static final int height = 60;
+	
+	private static final int window_Width = 1000;
+	private static final int window_Height = 1000;
+	
+	private void programRectangle(){
+		
+		double x_coordinate = getWidth() + width;
+		double y_coordinate = getHeight() + height;;
+		GRect rect1 = new GRect(x_coordinate,y_coordinate,width,height);
+		add(rect1);
+		
+		double x_coordinate_for_label = getWidth() + width*1.35;
+		double y_coordinate_for_label = getHeight() + height*1.5;
+		
+		GLabel program = new GLabel("Program", x_coordinate_for_label,y_coordinate_for_label);
+		add(program);
+	
+	}
+	
+	
+	private void consoleProgramLine(){
+		
+		double x1_coordinate = getWidth();
+		double y1_coordinate = getHeight();
+		double x2_coordinate = getWidth();
+		double y2_coordinate = getHeight() + height;
+		GLine line1 = new GLine(x1_coordinate,y1_coordinate,x2_coordinate,y2_coordinate);
+		add(line1);
+	}
+	
+	private void consoleProgramRectangle(){
+		
+		double x_coordinate = getWidth()/2 - width/2;
+		double y_coordinate = getHeight()/2 + height;
+		
+		GRect rect2 = new GRect(x_coordinate,y_coordinate,width,height);
+		add(rect2);
+		
+		double x_coordinate_for_label = width/2 - 15;
+		double y_coordinate_for_label = height + 130;
+		
+		GLabel program = new GLabel("ConsoleProgram", x_coordinate_for_label,y_coordinate_for_label);
+		add(program);
+	}
+	
+	private void graphicsLine(){
+		
+		
+		double x1 = getWidth()/2 ;
+		double y1 = getHeight()/2;
+		double x2 = getWidth()/2 - width-80;
+		double y2 = getHeight()/2 + height;
+		
+		GLine line1 = new GLine(x1,y1,x2,y2);
+		add(line1);
+	}
+	
+	private void graphicsProgramRectangle(){
+		
+		double x_coordinate = getWidth()/2 - width;
+		double y_coordinate = getHeight()/2 + height;
+		
+		GRect rect2 = new GRect(x_coordinate,y_coordinate,width,height);
+		add(rect2);
+		
+		double x_coordinate_for_label = width*2;
+		double y_coordinate_for_label = height + 130;
+		
+		GLabel program = new GLabel("GraphicsProgram", x_coordinate_for_label,y_coordinate_for_label);
+		add(program);
+	}
+	
+private void dialogLine(){
+		
+		double x1 = getWidth()/2 ;
+		double y1 = getHeight()/2;
+		double x2 = getWidth()/2 + width+80;
+		double y2 = getHeight()/2 + height;
+		
+		GLine line1 = new GLine(x1,y1,x2,y2);
+		add(line1);
+	}
+	
+	private void DialogProgramRectangle(){
+		
+		double x_coordinate = getWidth()/2 + width;
+		double y_coordinate = getHeight()/2 + height;
+		
+		GRect rect2 = new GRect(x_coordinate,y_coordinate,width,height);
+		add(rect2);
+		
+		double x_coordinate_for_label = width*2;
+		double y_coordinate_for_label = height + 130;
+		
+		GLabel program = new GLabel("DialogProgram", x_coordinate_for_label,y_coordinate_for_label);
+		add(program);
+	}
+	
 	public void run() {
 		/* You fill this in. */
-		//top rectangle and lable
-		GRect rect1 = new GRect(565,275,120,50);
-		GLabel label1 = new GLabel("Program",600,300);
 		
-		//other three rectangle,labels and connected with lines 
-		
-		
-		GLine line1 = new GLine(620,325,475,375);
-		GRect rect2 = new GRect(420,375,120,50);
-		GLabel label2 = new GLabel("GraphicsProgram",430,400);
-		
-		GLine line2 = new GLine(620,325,620,375);
-		GRect rect3 = new GRect(565,375,120,50);
-		GLabel label3 = new GLabel("ConsoleProgram",580,400);
-		
-		GLine line3 = new GLine(620,325,765,375);
-		GRect rect4 = new GRect(710,375,120,50);
-		GLabel label4 = new GLabel("DialogProgram",730,400);
-		
-		
-		//showing output all of these..
-		add(rect1);
-		add(label1);
-		add(line1);
-		add(rect2);
-		add(label2);
-		add(line2);
-		add(rect3);
-		add(label3);
-		add(line3);
-		add(rect4);
-		add(label4);
+		setSize(window_Width,window_Height);
+		programRectangle();
+		consoleProgramLine();
+		//consoleProgramRectangle();
+		//graphicsLine();
+		//graphicsProgramRectangle();
+		//dialogLine();
+		//DialogProgramRectangle();
 		
 	}
 }

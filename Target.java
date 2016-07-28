@@ -12,30 +12,45 @@ import acm.program.*;
 import java.awt.*;
 
 public class Target extends GraphicsProgram {	
-	public void run() {
-		/* You fill this in. */
-		
-		
-		
-		
-		//outer circle and its colour...
-		GOval oval = new GOval(600,275,72,72);
-		oval.setFilled(true);
-		oval.setFillColor(Color.RED);
-		//inner circle and its colour...
-		GOval oval1 = new GOval(613,287,46.8,46.8);
-		oval1.setFilled(true);
-		oval1.setFillColor(Color.WHITE);
-		
-		//most innner circle and its colour...
-		GOval oval2 = new GOval(625,300,21.6,21.6);
-		oval2.setFilled(true);
-		oval2.setFillColor(Color.RED);
-		
-		//output of the program
-		add(oval);
-		add(oval1);
-		add(oval2);
-		
-	}
+	
+    private void outerCircle() {
+        double radius =72;
+        double x_coordinate = getWidth()/2 - radius;
+        double y_coordinate = getHeight()/2 - radius;
+        GOval outerCircle = new GOval (x_coordinate, y_coordinate, radius*2, radius*2);
+        outerCircle.setColor(Color.RED);
+        outerCircle.setFilled(true);
+        outerCircle.setFillColor(Color.RED);
+        add(outerCircle);
+    }
+    private void middleCircle() {
+        double radius = 72*65/100;
+        double x_coordinate = getWidth()/2 - radius;
+        double y_coordinate= getHeight()/2 - radius;
+        GOval middleCircle = new GOval (x_coordinate, y_coordinate, radius*2, radius*2);
+        middleCircle.setColor(Color.WHITE);
+        middleCircle.setFilled(true);
+        middleCircle.setFillColor(Color.WHITE);
+        add(middleCircle);
+    }
+    private void innerCircle() {
+        double radius = 72*30/100;
+        double x_coordinate = getWidth()/2 - radius;
+        double y_coordinate = getHeight()/2 -radius;
+        GOval innerCircle = new GOval (x_coordinate, y_coordinate, radius*2, radius*2);
+        innerCircle.setColor(Color.RED);
+        innerCircle.setFilled(true);
+        innerCircle.setFillColor(Color.RED);
+        add(innerCircle);
+    }
+    
+    public void run() {
+    	
+    	
+        outerCircle();
+        middleCircle();
+        innerCircle();
+    }
 }
+	
+

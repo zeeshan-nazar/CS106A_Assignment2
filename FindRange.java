@@ -9,13 +9,9 @@
 import acm.program.*;
 
 public class FindRange extends ConsoleProgram {
-	public void run() {
-		/* You fill this in */
-		
-		
-		//Initialize All Variable use in program
-		println("Enter the list of Integer");
-		int sentinel = readInt();
+	
+	
+	private void findSmallestLargest(int sentinel){
 		int smallest = sentinel;
 		int largest = sentinel;
 		int count = 0;
@@ -46,7 +42,7 @@ public class FindRange extends ConsoleProgram {
 				break;
 			}
 			
-			//check no. is smmalles
+			//check no. is smallest
 			else if(sentinel<smallest)
 			{
 				smallest = sentinel;
@@ -61,11 +57,22 @@ public class FindRange extends ConsoleProgram {
 			
 			}
 			count++;
-			// again input no when user enter no is 0
-			sentinel = readInt();
-			
-				
+			 sentinel = readInt();
 		}
+	}
+	public void run() {
+		/* You fill this in */
+		
+		
+		//Initialize All Variable use in program
+		println("Enter the list of Integer");
+		int sentinel = readInt();
+		while(true){
+			findSmallestLargest(sentinel);
+		
+		}
+		
+				
 	}
 }
 
